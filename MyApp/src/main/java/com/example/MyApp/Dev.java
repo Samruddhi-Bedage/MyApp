@@ -1,20 +1,25 @@
 package com.example.MyApp;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public class Dev {
 
-    //@Autowired //Field Injection
     private Laptop laptop;
+    private int age;
 
-    public Dev(Laptop laptop){
-        this.laptop=laptop;
+    public Dev() {
+        System.out.println("Default constructor called...");
     }
 
-    public void build(){
+    public void setLaptop(Laptop laptop) {
+        this.laptop = laptop;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void build() {
         laptop.compile();
+        System.out.println("Developer age is: " + age);
         System.out.println("Working on awesome project...");
     }
 }
